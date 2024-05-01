@@ -45,6 +45,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - STBadman
     - cadair
     - dstansby
     - jgieseler
