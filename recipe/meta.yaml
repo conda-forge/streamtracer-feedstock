@@ -35,6 +35,8 @@ test:
     - pytest --pyargs streamtracer
   requires:
     - pip
+    - pytest
+    - pytest-doctestplus
 
 about:
   home: https://streamtracer.readthedocs.io/en/latest/
