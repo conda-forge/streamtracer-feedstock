@@ -1,5 +1,5 @@
 {% set name = "streamtracer" %}
-{% set version = "2.1.0rc1" %}
+{% set version = "2.1.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/streamtracer-{{ version }}.tar.gz
-  sha256: 57e6f5e5502779aa3b07e3a6676fa19edd4c1f0f4d6e54725e44e7fb2603b4d7
+  sha256: 480adcf6f42f7137325a5aa2d55d3ed04ef50df5ee572065abeebaecc6270f39
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -22,7 +22,7 @@ requirements:
   host:
     - python
     - pip
-    - maturin >=0.13,<0.14
+    - maturin >=1.0,<2.0
   run:
     - python
     - packaging
