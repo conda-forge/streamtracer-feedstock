@@ -1,5 +1,5 @@
 {% set name = "streamtracer" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,35 +7,37 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/streamtracer-{{ version }}.tar.gz
-  sha256: 29955653f88970ab3b1fe3e9c470e3b243c1a04e157647d22b2b13494f8864ca
+  sha256: af9d916bf2500afa47b403f9fb17b13792d0041dfe4a8b9451a523a65221c739
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
-  skip: true  # [py<37]
+  number: 0
+  skip: true  # [py<310]
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
   host:
     - python
-    - setuptools >=45
-    - setuptools-scm >=6.2
-    - numpy
-    - maturin >=0.13,<0.14
     - pip
+    - maturin >=1.0,<2.0
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - packaging
+    - numpy >=1.23
 
 test:
   imports:
     - streamtracer
   commands:
     - pip check
+    - pytest --pyargs streamtracer
   requires:
     - pip
+    - pytest
+    - pytest-doctestplus
 
 about:
   home: https://streamtracer.readthedocs.io/en/latest/
