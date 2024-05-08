@@ -25,7 +25,8 @@ requirements:
     - maturin >=0.13,<0.14
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - packaging
+    - numpy >=1.23
 
 test:
   imports:
