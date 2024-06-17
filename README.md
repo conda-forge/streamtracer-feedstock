@@ -220,6 +220,5 @@ Feedstock Maintainers
 
 * [@STBadman](https://github.com/STBadman/)
 * [@cadair](https://github.com/cadair/)
-* [@dstansby](https://github.com/dstansby/)
 * [@jgieseler](https://github.com/jgieseler/)
 
