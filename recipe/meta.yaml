@@ -10,7 +10,10 @@ source:
   sha256: a521e191ae3bb1018d99ce5834a5b25b4c6287ce4382e6fa8442551a1b4d6cfe
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    # https://github.com/conda-forge/maturin-feedstock/issues/152
+    - rm $PREFIX/lib/python3.14/build-details.json  # [unix and build_platform != target_platform and py==314]
+    - {{ PYTHON }} -m pip install . -vv
   number: 0
   skip: true  # [py<310]
 
