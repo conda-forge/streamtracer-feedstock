@@ -15,7 +15,7 @@ build:
     - rm $PREFIX/lib/python3.14/build-details.json  # [unix and build_platform != target_platform and py==314]
     - {{ PYTHON }} -m pip install . -vv
   number: 0
-  skip: true  # [py<310]
+  skip: true  # [py<312]
 
 requirements:
   build:
