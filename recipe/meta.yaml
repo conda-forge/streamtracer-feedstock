@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/streamtracer-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/streamtracer-{{ version }}.tar.gz
   sha256: 638d7d219e23965dab03105250c0c8ac52c05d757faafd90dc7c0968ff13dfc4
 
 build:
@@ -14,7 +14,7 @@ build:
     # https://github.com/conda-forge/maturin-feedstock/issues/152
     - rm $PREFIX/lib/python3.14/build-details.json  # [unix and build_platform != target_platform and py==314]
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   skip: true  # [py<312]
 
 requirements:
