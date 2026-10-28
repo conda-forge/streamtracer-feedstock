@@ -44,7 +44,7 @@ test:
     - pip
     - pytest
     - pytest-doctestplus
-    - colorama # [win]
+    - colorama  # [win]
 
 about:
   home: https://streamtracer.readthedocs.io/en/latest/
