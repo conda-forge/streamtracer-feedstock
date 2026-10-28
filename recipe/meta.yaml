@@ -1,5 +1,5 @@
 {% set name = "streamtracer" %}
-{% set version = "2.6.0" %}
+{% set version = "2.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/streamtracer-{{ version }}.tar.gz
-  sha256: 638d7d219e23965dab03105250c0c8ac52c05d757faafd90dc7c0968ff13dfc4
+  sha256: 31c424aae5f98cfbf1387e46cbaaf87a775cf036b54f99421ebbe190eaed597f
 
 build:
   script:
     # https://github.com/conda-forge/maturin-feedstock/issues/152
     - rm $PREFIX/lib/python3.14/build-details.json  # [unix and build_platform != target_platform and py==314]
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   skip: true  # [py<312]
 
 requirements:
